@@ -24,15 +24,26 @@
 
 namespace DropboxRestAPI.Models.Core
 {
-    public class SharedFolder
+    public class Group
     {
-        public string shared_folder_id { get; set; }
-        public string shared_folder_name { get; set; }
-        public string path { get; set; }
-        public string access_type { get; set; }
-        public string shared_link_policy { get; set; }
-        public Membership[] membership { get; set; }
-        public Owner owner { get; set; }
-        public GroupMembership[] groups { get; set; }
+        /// <summary>
+        /// Display name of the group.
+        /// </summary>
+        public string display_name { get; set; }
+
+        /// <summary>
+        /// The group's unique Dropbox ID.
+        /// </summary>
+        public string id { get; set; }
+
+        /// <summary>
+        /// The number of members in the group.
+        /// </summary>
+        public int member_count { get; set; }
+
+        /// <summary>
+        /// If the linked account is a member of a Dropbox for Business team, whether the group is on the same team as the linked account
+        /// </summary>
+        public bool same_team { get; set; }
     }
 }
